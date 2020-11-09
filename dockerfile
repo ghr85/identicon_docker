@@ -5,7 +5,7 @@ FROM python:3.7
 RUN groupadd -r uwsgi && useradd -r -g uwsgi uwsgi
 
 # Install Python 3 dependencies as python2 is pan breid
-RUN pip3 install FLASK uwsgi requests
+RUN pip3 install FLASK uwsgi requests redis
 
 # Set the current working directory for the next command
 WORKDIR /app
