@@ -1,7 +1,7 @@
 # Filefor configuring docker compose instance for testing with jenkins
 
 identidock:
-  build .
+  build: .
   expose:
     - "9090"
   environment:
