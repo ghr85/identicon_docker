@@ -5,9 +5,10 @@ identidock:
   expose:
     - "9090"
   environment:
-    links:
-        - dnmonster
-        - redis
+    ENV: UNIT
+  links:
+    - dnmonster
+    - redis
 
 dnmonster:
   image: amouat/dnmonster:1.0
