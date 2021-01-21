@@ -10,7 +10,8 @@ sudo docker-compose $COMPOSE_ARGS build --no-cache
 sudo docker-compose $COMPOSE_ARGS up -d
 
 # Run Unit Tests
-sudo docker-compose $COMPOSE_ARGS run --no-deps --rm -e ENV=UNIT identidock ERR=$?
+sudo docker-compose $COMPOSE_ARGS run --no-deps --rm -e ENV=UNIT identidock
+ERR=$?
 
 # Run system test if unit tests passed, inspect container to obtain IP address, curl identidock service to determine if 200 response
 if [ $ERR -eq 0 ]; then
