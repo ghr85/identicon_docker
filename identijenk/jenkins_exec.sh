@@ -23,8 +23,8 @@ if [ $ERR -eq 0 ]; then
         echo 'System test passed - now tagging image'
         # get the head of the latest commit
         HASH=$(git rev-parse --short HEAD)
-        sudo docker tag -f jenkins_identidock ghruoa/identidock:$HASH
-        sudo docker tag -f jenkins_identidock ghruoa/identidock:newest
+        sudo docker tag jenkins_identidock ghruoa/identidock:$HASH
+        sudo docker tag jenkins_identidock ghruoa/identidock:newest
         echo 'Pushing tagged image'
         sudo docker login -e $1 -u $2 -p $3
         sudo docker push ghruoa/identidock:$HASH
