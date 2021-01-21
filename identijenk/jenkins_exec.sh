@@ -26,7 +26,7 @@ if [ $ERR -eq 0 ]; then
         sudo docker tag jenkins_identidock ghruoa/identidock:$HASH
         sudo docker tag jenkins_identidock ghruoa/identidock:newest
         echo 'Pushing tagged image'
-        sudo docker login -e $1 -u $2 -p $3
+        sudo docker login -u $1 -p $2
         sudo docker push ghruoa/identidock:$HASH
         sudo docker push ghruoa/identidock:newest
     else
